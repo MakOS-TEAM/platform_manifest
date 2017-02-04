@@ -17,6 +17,9 @@
            fetch="https://github.com/TeamSubstratum"
            review="review.projektsubstratum.com" />
 		   
+  <remote  name="th"
+           fetch="https://github.com/TeamHorizon" />
+
   <default revision="refs/heads/cm-14.1"
            remote="laos"
            sync-c="true"
@@ -24,6 +27,8 @@
            sync-j="4" />
 
   <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" remote="aosp" />
+  <project path="art" name="android_art" groups="pdk" remote="th" revision="n" />
+  <project path="bionic" name="android_bionic" groups="pdk" remote="th" revision="n" />
   <project path="bootable/recovery" name="android_bootable_recovery" groups="pdk" />
   <project path="cts" name="platform/cts" groups="cts,pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="dalvik" name="android_dalvik" groups="pdk-cw-fs,pdk-fs" />
@@ -37,10 +42,14 @@
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" remote="aosp" />
   <project path="ndk" name="platform/ndk" groups="generic_fs" remote="aosp" />
   <project path="pdk" name="platform/pdk" groups="pdk" remote="aosp" />
+  <project path="platform_manifest" name="platform_manifest" remote="th" revision="n-oms" />
   <project path="platform_testing" name="platform/platform_testing" remote="aosp" />
   <project path="sdk" name="platform/sdk" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="toolchain/binutils" name="toolchain/binutils" remote="aosp" />
 
+  <project path="build" name="android_build" groups="pdk,tradefed" remote="th" revision="n" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+  </project>
   <project path="build/blueprint" name="platform/build/blueprint" groups="pdk,tradefed" remote="aosp" />
   <project path="build/kati" name="android_build_kati" groups="pdk,tradefed" />
   <project path="build/soong" name="platform/build/soong" groups="pdk,tradefed" remote="aosp" >
