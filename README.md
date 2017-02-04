@@ -67,7 +67,7 @@ Adding support for new device
 
 If you want to be official maintainer and add MakOS support for a new device you have to create these two files in device tree:
 
-xenonhd.mk sample
+makos.mk sample
 ----------
 
     # Inherit from those products. Most specific first.
